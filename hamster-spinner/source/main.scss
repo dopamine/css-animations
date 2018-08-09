@@ -1,0 +1,20 @@
+// sass main
+// sourceMap false
+// compileExpanded: ../style.css
+
+@import "./codepen-creds.scss";
+
+$blue-m : #3C8EBD;
+$blue-l : lighten($blue-m, 10%);
+$blue-d : darken($blue-m, 10%);
+
+$grey-m : #e7e7e7;
+$grey-l : lighten($grey-m, 5%);
+$grey-d : darken($grey-m, 10%);
+
+$tan-l : #FFB530;
+$tan-m : darken($tan-l, 20%);
+$tan-d : darken($tan-l, 50%);
+
+@import "./_shapes.scss";
+@import "./_animation.scss";

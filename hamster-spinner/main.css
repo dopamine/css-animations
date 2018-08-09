@@ -1,0 +1,336 @@
+/*    Codepen creds                     */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+* {
+}
+
+* body {
+  background: #3C8EBD;
+  color: #fafcfe;
+  font: 12px "Nunito", sans-serif;
+}
+
+* footer {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+* footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+* footer a:hover {
+  color: #add1e5;
+  text-decoration: underline;
+}
+
+* footer i.star {
+  color: #FBDB86;
+}
+
+/*    Shapes                     */
+.scene * {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.scene {
+  position: absolute;
+  width: 100vw;
+  top: 10vh;
+  left: 35vw;
+}
+
+body::before {
+  background: linear-gradient(#60a5cc, #3C8EBD);
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 55vh;
+  position: absolute;
+  top: 25em;
+  z-index: -20;
+}
+
+.wheel * {
+  background: #e7e7e7;
+}
+
+.wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.drum {
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+  background: transparent;
+  border: 8px solid #e7e7e7;
+  position: relative;
+}
+
+.drum::after {
+  display: block;
+  content: '';
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+  background: transparent;
+  border: 10px dotted #f4f4f4;
+  position: relative;
+  top: -34px;
+  left: -10px;
+  z-index: -10;
+}
+
+.bar {
+  width: 20em;
+  height: 2em;
+  position: relative;
+  top: 44%;
+}
+
+.nut {
+  background: #cecece;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  z-index: 20;
+}
+
+.stand {
+  width: 14em;
+  height: 14em;
+  background: transparent;
+  border: 8px solid #f4f4f4;
+  border-width: 8px 0 0 8px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 60%;
+  left: 13%;
+}
+
+.wheel::after {
+  display: block;
+  content: '';
+  background: #307196;
+  width: 25em;
+  height: 1em;
+  border-radius: 100%;
+  position: relative;
+  left: -2em;
+  top: -.5em;
+  z-index: -10;
+}
+
+.hamster {
+  position: absolute;
+  top: 0em;
+  left: 6em;
+  z-index: -10;
+  width: 10em;
+  height: 20em;
+}
+
+.body {
+  width: 2em;
+  height: 5em;
+  z-index: 0;
+  position: absolute;
+  left: 3em;
+  background: #FFB530;
+}
+
+.body::before,
+.body::after {
+  background: #FFB530;
+  content: "";
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -10;
+}
+
+.body::before {
+  top: 0;
+  left: -2.5em;
+}
+
+.body::after {
+  top: 0;
+  right: -2.5em;
+}
+
+.face {
+  perspective: 50px;
+}
+
+.chin {
+  background: #FFB530;
+  width: 2em;
+  height: 2em;
+  border-radius: 0 0 0 100%;
+  position: absolute;
+  top: 1.8em;
+  left: -3.6em;
+  transform: scaleX(0.6);
+}
+
+.chin::before {
+  display: block;
+  content: '';
+  background: #fff;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 100%;
+}
+
+.chin::after {
+  display: block;
+  content: '/|\\';
+  color: #fff;
+  transform: rotate(-60deg);
+  position: relative;
+  top: -0.6em;
+  left: 1em;
+}
+
+.eyes {
+  background: #301f00;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 100%;
+  position: relative;
+  top: 1.4em;
+  left: -1em;
+}
+
+.ears {
+  background: #301f00;
+  width: 2.4em;
+  height: 2em;
+  border-radius: 0 40% 40% 0;
+  transform: translate3d(0, 0, 0);
+  transform: rotateY(-40deg) scale(0.8);
+}
+
+.legs * {
+  background: #FFB530;
+  width: 0.8em;
+  height: 1.5em;
+  border-radius: 50%;
+  box-shadow: 3px 0 0 #c98100;
+  z-index: -15;
+}
+
+.legs .front {
+  position: absolute;
+  bottom: -0.8em;
+  left: -1.2em;
+  transform: rotate(6deg);
+}
+
+.legs .back {
+  position: absolute;
+  bottom: -0.7em;
+  right: -1.5em;
+  transform: rotate(-6deg);
+}
+
+.tail {
+  background: #FFB530;
+  width: 1em;
+  height: 0.3em;
+  border-radius: 100%;
+  position: absolute;
+  top: 1.4em;
+  right: -2.6em;
+  transform: rotate(-12deg);
+}
+
+/*    Animation                     */
+.drum {
+  animation: drumspin 3s linear reverse infinite;
+}
+
+.legs *, .tail {
+  animation: legmove 0.3s ease-in  infinite;
+}
+
+.legs .front {
+  animation-delay: 0.1s;
+}
+
+.body {
+  animation: hamsterbounce 0.3s ease-in-out alternate infinite;
+}
+
+.hamster {
+  animation: hamsterswing 2s linear infinite;
+}
+
+@keyframes drumspin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes legmove {
+  0% {
+    transform: rotate(32deg);
+  }
+  80% {
+    transform: rotate(-32deg);
+  }
+  100% {
+    transform: rotate(32deg);
+  }
+}
+
+@keyframes hamsterbounce {
+  0% {
+    bottom: 0.6em;
+    transform: scaleY(1);
+  }
+  50% {
+    bottom: 0;
+    transform: scaleY(0.94);
+  }
+  100% {
+    bottom: 0.6em;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes hamsterswing {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(24deg);
+  }
+  70% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

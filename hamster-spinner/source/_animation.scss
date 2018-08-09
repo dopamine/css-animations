@@ -1,0 +1,60 @@
+// main: ./main.scss
+
+/*    Animation                     */
+
+
+
+.drum {
+  animation:drumspin 3s linear reverse infinite;
+}
+
+.legs *, .tail {
+  animation:legmove 0.3s ease-in  infinite;
+}
+.legs .front {
+  animation-delay:0.1s;
+}
+
+.body {
+  animation:hamsterbounce 0.3s ease-in-out alternate infinite;
+}
+$easing : cubic-bezier(
+  0.650, 0, 0.380, 0.775
+);
+$easing :linear;
+.hamster {
+  animation:hamsterswing 2s  $easing infinite;
+}
+
+
+@keyframes drumspin {
+  from{
+    transform:rotate(0);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+
+@keyframes legmove {
+  0% {    transform:rotate( 32deg);}
+  80% {   transform:rotate(-32deg); }
+  100% {  transform:rotate( 32deg); }
+}
+
+@keyframes hamsterbounce {
+  0%    { bottom:0.6em; transform:scaleY(1);}
+  50%   { bottom:0; transform:scaleY(0.94);}
+  100%  { bottom:0.6em; transform:scaleY(1);}
+}
+
+@keyframes hamsterswing {
+  // 0%    { transform:rotate(-6deg); }
+  // 90%  { transform:rotate(24deg); }
+  // 100%  { transform:rotate(-6deg); }
+  0%    { transform:rotate(0deg); }
+  50%  { transform:rotate(24deg); }
+  70%  { transform:rotate(-12deg); }
+  100%  { transform:rotate(0deg); }
+}

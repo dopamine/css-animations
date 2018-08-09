@@ -1,0 +1,40 @@
+// main: ./main.scss
+
+/*    Codepen creds                     */
+
+$theme: #3C8EBD;
+* {
+  @function contrast-text-color($color) {
+    @if (lightness($color) > 50) {
+      @return darken($theme, 30%);
+    } @else {
+      @return lighten($theme,50%);
+    }
+  }
+
+  $theme-txt: contrast-text-color($theme);
+
+  @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+  $font: 'Nunito', sans-serif;
+
+  body {
+    background: $theme;
+    color: $theme-txt;
+    font: 12px $font;
+  }
+
+  footer {
+    position:absolute;
+    bottom:0; right:12px;
+  //  width:100%;
+
+    text-align:right;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+
+    a {color:#fff; text-decoration:none;}
+    a:hover {color:lighten($theme,30%); text-decoration:underline; }
+    i.star { color: #FBDB86;}
+  }
+}
