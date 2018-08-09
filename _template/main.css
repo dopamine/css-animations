@@ -1,0 +1,36 @@
+/*    Codepen creds                     */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+* {
+}
+
+* body {
+  background: #495771;
+  color: #d5dae4;
+  font: 12px "Nunito", sans-serif;
+}
+
+* footer {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+* footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+* footer a:hover {
+  color: #97a4bc;
+  text-decoration: underline;
+}
+
+* footer i.star {
+  color: #FBDB86;
+}
+
+/*    Shapes                     */
+/*    Animation                     */
