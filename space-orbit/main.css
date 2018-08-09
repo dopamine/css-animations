@@ -1,0 +1,234 @@
+/*    Codepen creds                     */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+* {
+}
+
+* body {
+  background: #000;
+  color: gray;
+  font: 12px "Nunito", sans-serif;
+}
+
+* footer {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+* footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+* footer a:hover {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+
+* footer i.star {
+  color: #FBDB86;
+}
+
+/*    Shapes                     */
+.space,
+.space * {
+  display: block;
+  position: absolute;
+}
+
+.space {
+  top: 20vw;
+  left: 25vw;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6vw rgba(49, 70, 196, 0.2), 0 0 0 15vw rgba(200, 255, 220, 0.1);
+}
+
+.flight {
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  transform: rotate(90deg);
+}
+
+.path {
+  top: -2vw;
+  left: -2vw;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 2vw solid rgba(84, 241, 255, 0.5);
+}
+
+.spaceship {
+  top: 16vw;
+  left: -.5vw;
+  transform: rotate(45deg);
+}
+
+.spaceship .body {
+  width: 10vw;
+  height: 10vw;
+  background: #2A46C4;
+  border-radius: 0 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.spaceship .body::before {
+  display: block;
+  content: '';
+  background: #E7DECE;
+  width: 0vw;
+  height: 10vw;
+  border-left: 5vw solid #FFF7F1;
+  border-right: 5vw solid #E7DECE;
+  transform: rotate(-45deg);
+}
+
+.spaceship .viewport {
+  background: #7387e1;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  top: 3vw;
+  left: 3vw;
+}
+
+.spaceship .wings,
+.spaceship .wings::before,
+.spaceship .wings::after {
+  background: #2A46C4;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 0 100%;
+}
+
+.spaceship .wings::before,
+.spaceship .wings::after {
+  display: block;
+  content: '';
+  position: absolute;
+}
+
+.spaceship .wings {
+  top: 5.5vw;
+  left: 5.5vw;
+  z-index: 20;
+}
+
+.spaceship .wings::before {
+  transform: rotate(30deg);
+  left: -3vw;
+  top: 2.5vw;
+  z-index: -10;
+}
+
+.spaceship .wings::after {
+  transform: rotate(-30deg);
+  left: 2.5vw;
+  top: -3.2vw;
+  z-index: -10;
+}
+
+.spaceship .thruster {
+  background: transparent;
+  width: 4vw;
+  border-bottom: 2vw solid #51576B;
+  border-left: .5vw solid transparent;
+  border-right: .5vw solid transparent;
+  transform: rotate(-45deg);
+  top: 8vw;
+  left: 6.4vw;
+  z-index: 10 !important;
+}
+
+.spaceship .flame {
+  background: #D64231;
+  width: 3vw;
+  height: 3vw;
+  left: 8.5vw;
+  top: 8.5vw;
+  border-radius: 0 50%;
+  z-index: 1;
+}
+
+.spaceship .flame::before {
+  display: block;
+  content: '';
+  background: #EDBD52;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 0 70%;
+}
+
+.planet {
+  background: #3451d4;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  box-shadow: 0 0 6vw rgba(200, 220, 255, 0.4);
+  top: 20vw;
+  left: 20vw;
+  overflow: hidden;
+}
+
+.planet::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 2vw;
+  left: -3vw;
+  width: 8vw;
+  height: 2vw;
+  background: green;
+  border-radius: 100%;
+}
+
+.planet::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 6vw;
+  right: -3vw;
+  width: 8vw;
+  height: 4vw;
+  background: green;
+  border-radius: 100%;
+}
+
+/*    Animation                     */
+.flight {
+  animation: flight 4s cubic-bezier(0.855, 0.005, 0.185, 1) infinite;
+}
+
+.flame {
+  animation: flames 0.2s ease-in-out infinite;
+}
+
+@keyframes flight {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes flames {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

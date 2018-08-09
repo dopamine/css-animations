@@ -1,0 +1,22 @@
+// sass main
+// sourceMap false
+// compileExpanded: ../style.css
+
+@import "./codepen-creds.scss";
+
+
+$sh-body    : #FFF7F1;
+$sh-shadow  : #E7DECE;
+$sh-blue    : #2A46C4;
+$sh-porthole: lighten($sh-blue, 20%); // #A5C6E7;
+$sh-thruster: #51576B;
+$sh-flame   : #D64231;
+$sh-flame-hl: #EDBD52;
+$teal       : #57F1FF;
+
+
+
+
+
+@import "./_shapes.scss";
+@import "./_animation.scss";
